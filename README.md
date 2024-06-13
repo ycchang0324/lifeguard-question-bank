@@ -3,11 +3,9 @@
 The template of this quiz is from [Mitchgavan's react-multi-choice-quiz](https://github.com/mitchgavan/react-multi-choice-quiz).
 
 
-[View demo](http://mitchgavan.github.io/react-multi-choice-quiz/)
+[View demo](https://ycchang0324.github.io/lifeguard-question-bank/)
 
-There's also an accompanying [tutorial blog post](https://mitchgavan.com/react-quiz/).
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+We put the question bank of 2024 lifeguard certificate in quizQuestions.js
 
 ## Available Scripts
 

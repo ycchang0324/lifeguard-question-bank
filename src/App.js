@@ -5,6 +5,9 @@ import Result from './components/Result';
 import logo from './svg/logo.svg';
 import './App.css';
 
+
+
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -16,7 +19,8 @@ class App extends Component {
       answerOptions: [],
       answer: '',
       answersCount: {},
-      result: ''
+      result: '',
+      message: '',
     };
 
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
@@ -32,33 +36,55 @@ class App extends Component {
     });
   }
 
+  //useless
   shuffleArray(array) {
     var currentIndex = array.length,
       temporaryValue,
       randomIndex;
-
+   // no shuffle
+      /*
     // While there remain elements to shuffle...
     while (0 !== currentIndex) {
       // Pick a remaining element...
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex -= 1;
-
+   
       // And swap it with the current element.
       temporaryValue = array[currentIndex];
       array[currentIndex] = array[randomIndex];
       array[randomIndex] = temporaryValue;
+      
     }
-
+*/
     return array;
   }
 
+ 
+
   handleAnswerSelected(event) {
     this.setUserAnswer(event.currentTarget.value);
+    if(event.currentTarget.value=='T'){
+        
+        this.state.message='正確';
 
+    }
+    else{
+      
+      console.log(this.state.answerOptions);
+        const filteredAnswers = this.state.answerOptions.filter(answer => answer.type === "T");
+
+        // 使用 map 方法提取出 content 值
+        const contentValues = filteredAnswers.map(answer => answer.content);
+        this.state.message='錯誤，答案是 ' + contentValues;
+
+    }
+    
     if (this.state.questionId < quizQuestions.length) {
-      setTimeout(() => this.setNextQuestion(), 300);
+      setTimeout(() => this.setNextQuestion(), 3000);
+
     } else {
-      setTimeout(() => this.setResults(this.getResults()), 300);
+      setTimeout(() => this.setResults(this.getResults()), 3000);
+
     }
   }
 
@@ -81,25 +107,28 @@ class App extends Component {
       questionId: questionId,
       question: quizQuestions[counter].question,
       answerOptions: quizQuestions[counter].answers,
-      answer: ''
+      answer: '',
+      message:''
     });
   }
 
   getResults() {
     const answersCount = this.state.answersCount;
-    const answersCountKeys = Object.keys(answersCount);
-    const answersCountValues = answersCountKeys.map(key => answersCount[key]);
-    const maxAnswerCount = Math.max.apply(null, answersCountValues);
+    var correctNum = 0;
+    if (answersCount['F'] == this.state.counter+1) {
+      correctNum=0;
+    }
+    else{
+      correctNum=answersCount['T'];
+    }
 
-    return answersCountKeys.filter(key => answersCount[key] === maxAnswerCount);
+    return correctNum;
   }
 
   setResults(result) {
-    if (result.length === 1) {
-      this.setState({ result: result[0] });
-    } else {
-      this.setState({ result: 'Undetermined' });
-    }
+      this.setState({ result: result+1,
+              message:''
+      });
   }
 
   renderQuiz() {
@@ -116,17 +145,21 @@ class App extends Component {
   }
 
   renderResult() {
-    return <Result quizResult={this.state.result} />;
+    return <Result totalNum={this.state.counter+1} correctNum={this.state.result-1} />;
   }
+
 
   render() {
     return (
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>React Quiz</h2>
+          <h2>救生員題庫</h2>
+          <h3>第一章『救生安全知識』</h3>
+          <h4>一、救生概論</h4>
         </div>
         {this.state.result ? this.renderResult() : this.renderQuiz()}
+        <div className="message">{this.state.message}</div>
       </div>
     );
   }

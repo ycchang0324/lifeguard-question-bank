@@ -24,6 +24,30 @@ body {
   font-family: sans-serif;
 }
 
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.button {
+  background-color: #04AA6D; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: none;
+  font-size: 16px;
+}
+
+.message {
+  text-align: center;
+}
+
 .container {
   position: relative;
   max-width: 800px;
@@ -110,9 +134,9 @@ body {
 
 .radioCustomButton:checked ~ .radioCustomLabel:before {
   content: '';
-  background: #8bc53f url(./svg/icon-check.svg) no-repeat;
+  background:  #0f0 url(./svg/green-dot.svg) no-repeat;
   background-size: 27px;
-  border-color: #8bc53f;
+  border-color: #0f0;
 }
 
 /* Animation */
