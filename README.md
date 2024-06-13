@@ -1,5 +1,8 @@
 # React Quiz
 
+The template of this quiz is from [Mitchgavan's react-multi-choice-quiz](https://github.com/mitchgavan/react-multi-choice-quiz).
+
+
 [View demo](http://mitchgavan.github.io/react-multi-choice-quiz/)
 
 There's also an accompanying [tutorial blog post](https://mitchgavan.com/react-quiz/).
