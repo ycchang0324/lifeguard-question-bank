@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/lifeguard-question-bank/static/css/main.40cad78d.css",
+    "main.js": "/lifeguard-question-bank/static/js/main.563cba15.js",
+    "static/media/logo.svg": "/lifeguard-question-bank/static/media/logo.3adc4d153dba4c791b00838e53dc0410.svg",
+    "index.html": "/lifeguard-question-bank/index.html",
+    "static/media/icon-check.svg": "/lifeguard-question-bank/static/media/icon-check.2a82d3ac834a0d077676.svg",
+    "main.40cad78d.css.map": "/lifeguard-question-bank/static/css/main.40cad78d.css.map",
+    "main.563cba15.js.map": "/lifeguard-question-bank/static/js/main.563cba15.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.40cad78d.css",
+    "static/js/main.563cba15.js"
+  ]
+}
