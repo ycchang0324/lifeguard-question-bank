@@ -1,1 +1,0 @@
-(self.webpackChunkreact_quiz=self.webpackChunkreact_quiz||[]).push([[25],{25:function(){}}]);
