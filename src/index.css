@@ -178,3 +178,68 @@ body {
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
 }
+
+.Section {
+  text-align: center;
+}
+
+.Section-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.dropdown-title {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dropdown-arrow {
+  margin-left: 10px;
+}
+
+.dropdown-list {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  margin-top: 5px;
+  border-radius: 4px;
+  z-index: 1;
+  width: 100%;
+  padding: 0;
+  list-style: none;
+  color:black;
+}
+
+.dropdown-list-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-list-item:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.selected-item {
+  margin-top: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* 设置按钮之间的间距 */
+}
