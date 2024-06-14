@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/lifeguard-question-bank/static/css/main.4d810aa5.css",
-    "main.js": "/lifeguard-question-bank/static/js/main.96430bc9.js",
+    "main.css": "/lifeguard-question-bank/static/css/main.af7a53b6.css",
+    "main.js": "/lifeguard-question-bank/static/js/main.1d175669.js",
     "static/media/logo.svg": "/lifeguard-question-bank/static/media/logo.8c42a507ca01d05c93be89055b635bec.svg",
     "static/media/green-dot.svg": "/lifeguard-question-bank/static/media/green-dot.fde7b9577e143919f672.svg",
     "index.html": "/lifeguard-question-bank/index.html",
-    "main.4d810aa5.css.map": "/lifeguard-question-bank/static/css/main.4d810aa5.css.map",
-    "main.96430bc9.js.map": "/lifeguard-question-bank/static/js/main.96430bc9.js.map"
+    "main.af7a53b6.css.map": "/lifeguard-question-bank/static/css/main.af7a53b6.css.map",
+    "main.1d175669.js.map": "/lifeguard-question-bank/static/js/main.1d175669.js.map"
   },
   "entrypoints": [
-    "static/css/main.4d810aa5.css",
-    "static/js/main.96430bc9.js"
+    "static/css/main.af7a53b6.css",
+    "static/js/main.1d175669.js"
   ]
 }
