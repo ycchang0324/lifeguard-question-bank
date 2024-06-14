@@ -6,15 +6,16 @@ import QuestionCount from '../components/QuestionCount';
 import AnswerOption from '../components/AnswerOption';
 
 function Quiz(props) {
-  function renderAnswerOptions(key) {
+  function renderAnswerOptions(option, index) {
+    const id = `${props.questionId}-${index}`; // 使用 questionId 和索引組合生成唯一的 id
     return (
       <AnswerOption
-        key={key.content}
-        answerContent={key.content}
-        answerType={key.type}
-        answer={props.answer}
-        questionId={props.questionId}
-        onAnswerSelected={props.onAnswerSelected}
+        key={id} // 使用 id 作為 key 保證唯一性
+        answerContent={option.content}
+        answerType={option.type}
+        id={id}
+        checkedId={props.checkedId}
+        onAnswerSelected={(e) => props.onAnswerSelected(e, id)} // 傳遞 id 給 onAnswerSelected
       />
     );
   }
@@ -38,15 +39,14 @@ function Quiz(props) {
       </div>
     </CSSTransitionGroup>
   );
-  
 }
 
 Quiz.propTypes = {
-  answer: PropTypes.string.isRequired,
   answerOptions: PropTypes.array.isRequired,
   question: PropTypes.string.isRequired,
   questionId: PropTypes.number.isRequired,
   questionTotal: PropTypes.number.isRequired,
+  checkedId: PropTypes.string.isRequired,
   onAnswerSelected: PropTypes.func.isRequired,
 };
 

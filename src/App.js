@@ -5,6 +5,15 @@ import logo from './svg/logo.svg';
 import Section from './components/Section';
 import './App.css';
 
+const chapters = ['第一章『救生安全知識』', '第二章『徒手救援知識』', '第三章『急救知識』', '第四章『救援器材知識』','第五章『船艇救援知識』'];
+const sections =  [
+  ["救生概論", "水域安全", "仰漂", "踩水", "抽筋自解", "水域標誌"],
+  ["速度游", "救生四式", "拖帶假人", "蛙鞋", "潛水", "潛泳", "綜合（入水、接近、防衛躲避、解脫、帶人、起岸…等）"],
+  ["CPR&AED(單雙人)", "脊椎損傷(水中救援)", "異物哽塞(含復甦姿勢)", "其他 評估 、 休克 、 止血 、 體循環 、 失溫 、 燙傷 、 骨折 、 冰敷 …等"],
+  ["拋繩救生", "長背板", "救生浮標"],
+  ["機動船艇", "充氣式船艇", "一般船艇(七人式、橡皮艇)"]
+];
+
 const quizQuestionsMap = {
   // 第一章
   '0-0': () => import('./api/quizQuestions-1-1'),
@@ -40,7 +49,6 @@ const quizQuestionsMap = {
   '4-2': () => import('./api/quizQuestions-5-3'),
 };
 
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -53,6 +61,7 @@ class App extends Component {
       question: '',
       answerOptions: [],
       answer: '',
+      checkedId: '',
       message: '',
       result: '',
     };
@@ -88,9 +97,11 @@ class App extends Component {
       questionId: 1,
       answerOptions: quizQuestions[0].answers,
       nextButtonText: '下一題',
+      result: 'begin',
     });
     document.getElementById("previousButton").style.display = "none";
     document.getElementById("nextButton").style.display = "block";
+    document.getElementById("confirmButton").style.display = "none";
   }
 
   handleChapterSelect = (chapterIndex) => {
@@ -101,12 +112,14 @@ class App extends Component {
     this.setState({ section: section });
   };
 
-  handleProblemSet = (quizQuestions) =>{
-    this.setState({quizQuestions: quizQuestions});
+  handleProblemSet = (quizQuestions) => {
+    this.setState({ quizQuestions: quizQuestions });
   }
 
-  handleAnswerSelected(event) {
+  handleAnswerSelected(event, id) {
     this.setUserAnswer(event.currentTarget.value);
+    this.setUserContent(event.currentTarget.getAttribute('content'));
+    this.setState({ checkedId: id }); // 更新選中的 id
     if (event.currentTarget.value === 'T') {
       this.setState({
         message: '正確'
@@ -120,10 +133,16 @@ class App extends Component {
     }
   }
 
+  setUserContent(content) {
+    this.setState({
+      content: content
+    });
+  }
+
   setUserAnswer(answer) {
-    this.setState(() => ({
+    this.setState({
       answer: answer
-    }));
+    });
   }
 
   setNextQuestion = () => {
@@ -145,6 +164,8 @@ class App extends Component {
         answerOptions: this.state.quizQuestions[counter].answers,
         answer: '',
         message: '',
+        content: '',
+        checkedId: '', // 重置選中的 id
       });
       document.getElementById("previousButton").style.display = "block";
       document.getElementById("nextButton").style.display = "block";
@@ -163,6 +184,8 @@ class App extends Component {
           answerOptions: this.state.quizQuestions[counter].answers,
           answer: '',
           message: '',
+          content: '',
+          checkedId: '', // 重置選中的 id
         });
         document.getElementById("previousButton").style.display = "none";
         document.getElementById("nextButton").style.display = "block";
@@ -174,6 +197,7 @@ class App extends Component {
           answerOptions: this.state.quizQuestions[counter].answers,
           answer: '',
           message: '',
+          checkedId: '', // 重置選中的 id
         });
         document.getElementById("previousButton").style.display = "block";
         document.getElementById("nextButton").style.display = "block";
@@ -185,10 +209,12 @@ class App extends Component {
     return (
       <Quiz
         answer={this.state.answer}
+        content={this.state.content}
         answerOptions={this.state.answerOptions}
         questionId={this.state.questionId}
         question={this.state.question}
         questionTotal={this.state.quizQuestions.length}
+        checkedId={this.state.checkedId} // 傳遞選中的 id
         onAnswerSelected={this.handleAnswerSelected}
       />
     );
@@ -199,7 +225,16 @@ class App extends Component {
   }
 
   renderSection() {
-    return <Section onChapterSelect={this.handleChapterSelect} onSectionSelect={this.handleSectionSelect}/>;
+    return <Section onChapterSelect={this.handleChapterSelect} onSectionSelect={this.handleSectionSelect} />;
+  }
+
+  renderConfirmSection() {
+    return (
+      <div>
+        {chapters[this.state.chapter]}<br />
+        {sections[this.state.chapter][this.state.section]}
+      </div>
+    );
   }
 
   render() {
@@ -208,15 +243,15 @@ class App extends Component {
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>救生員題庫</h2>
-          {this.renderSection()}
+          {this.state.result !== '' ? this.renderConfirmSection() : this.renderSection()}
           <button type="button" className="button" id="confirmButton" onClick={this.setProblemSet}>確認</button>
         </div>
-        {this.state.result ? this.renderResult() : this.renderQuiz()}
+        {this.state.result === 'finished' ? this.renderResult() : this.renderQuiz()}
         <div className="message">{this.state.message}</div><br /><br />
         <div className="button-container">
           <button type="button" className="button" id="previousButton" onClick={this.setPreviousQuestion}>上一題</button>
           <button type="button" className="button" id="nextButton" onClick={this.setNextQuestion}>下一題</button>
-        </div><br></br>
+        </div><br />
       </div>
     );
   }
