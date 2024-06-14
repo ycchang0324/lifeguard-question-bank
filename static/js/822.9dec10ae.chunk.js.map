@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/822.9dec10ae.chunk.js","mappings":"mHACA,UADoB,C","sources":["api/quizQuestions-2-3.js"],"sourcesContent":["var quizQuestions = 0;\r\nexport default quizQuestions;"],"names":[],"sourceRoot":""}
