@@ -40,7 +40,7 @@ var quizQuestions = [
           "content": "X"
         }
       ]
-    } ,
+    } /*,
    
     {
       "questionType": "TrueORFalse",
@@ -956,7 +956,7 @@ var quizQuestions = [
         }
       ]
     }
-    
+    */
   ]
   
 
