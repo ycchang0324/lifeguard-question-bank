@@ -1755,8 +1755,47 @@ var quizQuestions = [
     },
     {
         "questionType": "multipleChoice",
-        "question": "在溪、河遇到小漩渦，應採（1）踩水（2）仰漂（3）水母漂（4）韻律呼吸，以便及時脫離。",
-        "answers": []
+        "question": "在溪、河遇到小漩渦，應採",
+        "answers": [
+            {
+                "type": "F",
+                "content": "踩水"
+            },
+            {
+                "type": "T",
+                "content": "仰漂"
+            },
+            {
+                "type": "F",
+                "content": "水母漂"
+            },
+            {
+                "type": "F",
+                "content": "韻律呼吸，以便及時脫離。"
+            }
+        ]
+    },
+    {
+        "questionType": "multipleChoice",
+        "question": "開放水域不建議採用之搜索方式為何？",
+        "answers": [
+            {
+                "type": "F",
+                "content": "圓周式"
+            },
+            {
+                "type": "T",
+                "content": "直線式"
+            },
+            {
+                "type": "F",
+                "content": "標竿式"
+            },
+            {
+                "type": "F",
+                "content": "地毯式"
+            }
+        ]
     },
     {
         "questionType": "multipleChoice",
@@ -2404,8 +2443,43 @@ var quizQuestions = [
     },
     {
         "questionType": "multipleChoice",
-        "question": "溪谷溯行選擇 （1）水淺（2）水深（3）水濁-的區域通過，同時注意天候水流，量力而為不可貿然強行通過。",
-        "answers": []
+        "question": "溪谷溯行選擇",
+        "answers": [
+            {
+                "type": "T",
+                "content": "水淺"
+            },
+            {
+                "type": "F",
+                "content": "水深"
+            },
+            {
+                "type": "TF",
+                "content": "水濁 區域通過，同時注意天候水流，量力而為不可貿然強行通過。"
+            }
+        ]
+    },
+    {
+        "questionType": "multipleChoice",
+        "question": "在混濁水域，應選擇何種方式入水？",
+        "answers": [
+            {
+                "type": "F",
+                "content": "淺跳式"
+            },
+            {
+                "type": "F",
+                "content": "打樁式"
+            },
+            {
+                "type": "F",
+                "content": "跨步式"
+            },
+            {
+                "type": "T",
+                "content": "以上皆非。"
+            }
+        ]
     },
     {
         "questionType": "multipleChoice",

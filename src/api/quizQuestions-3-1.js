@@ -1105,8 +1105,39 @@ var quizQuestions = [
     },
     {
         "questionType": "multipleChoice",
-        "question": "單純實施人工呼吸時，吹氣是每隔（1）3秒鐘（2）4秒鐘（3）5秒鐘，吹氣1次。",
-        "answers": []
+        "question": "單純實施人工呼吸時，吹氣是每隔",
+        "answers": [
+            {
+                "type": "F",
+                "content": "3秒鐘"
+            },
+            {
+                "type": "F",
+                "content": "4秒鐘"
+            },
+            {
+                "type": "T",
+                "content": "5秒鐘 吹氣1次。"
+            }
+        ]
+    },
+    {
+        "questionType": "multipleChoice",
+        "question": "操作嬰兒的人工呼吸，吹氣是每隔",
+        "answers": [
+            {
+                "type": "T",
+                "content": "3秒鐘"
+            },
+            {
+                "type": "F",
+                "content": "4秒鐘"
+            },
+            {
+                "type": "F",
+                "content": "5秒鐘 吹氣1次。"
+            }
+        ]
     },
     {
         "questionType": "multipleChoice",

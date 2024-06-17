@@ -113,7 +113,7 @@ var quizQuestions = [
     },
     {
         "questionType": "multipleChoice",
-        "question": "處理清醒的哽塞患者，應採用以下姿勢向上推壓胸腔底部（4）讓患者躺下，向下推壓腹部。",
+        "question": "處理清醒的哽塞患者，應採用以下姿勢？",
         "answers": [
             {
                 "type": "T",
@@ -121,11 +121,15 @@ var quizQuestions = [
             },
             {
                 "type": "F",
-                "content": "讓患者站立，不予理會讓患者躺下"
+                "content": "讓患者站立，不予理會"
             },
             {
                 "type": "F",
-                "content": "讓患者躺下，"
+                "content": "讓患者躺下，向上推壓胸腔底部"
+            },
+            {
+                "type": "F",
+                "content": "讓患者躺下，向下推壓腹部"
             }
         ]
     },

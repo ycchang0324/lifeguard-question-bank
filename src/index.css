@@ -24,8 +24,6 @@ body {
   font-family: sans-serif;
 }
 
-
-
 .button {
   background-color: #04AA6D; /* Green */
   border: none;
@@ -142,7 +140,7 @@ body {
 
 .radioCustomButton:checked ~ .radioCustomLabel:before {
   content: '';
-  background:  #0f0 url(./svg/green-dot.svg) no-repeat;
+  background: #0f0 url(./svg/green-dot.svg) no-repeat center center;
   background-size: 27px;
   border-color: #0f0;
 }
@@ -221,7 +219,7 @@ body {
   width: 100%;
   padding: 0;
   list-style: none;
-  color:black;
+  color: black;
 }
 
 .dropdown-list-item {

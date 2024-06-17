@@ -85,6 +85,7 @@ class App extends Component {
   componentDidMount() {
     document.getElementById("previousButton").style.display = "none";
     document.getElementById("nextButton").style.display = "none";
+    document.getElementById("resetButton").style.display = "none";
   }
 
   setProblemSet = async () => {
@@ -221,6 +222,7 @@ class App extends Component {
   }
 
   renderResult() {
+    document.getElementById("resetButton").style.display = "block";
     return <Result />;
   }
 
@@ -237,13 +239,16 @@ class App extends Component {
     );
   }
 
+  resetTest = () => {
+    window.location.reload();
+  }
   render() {
     return (
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>救生員題庫</h2>
-          {this.state.result !== '' ? this.renderConfirmSection() : this.renderSection()}
+          {this.state.result !== '' ? this.renderConfirmSection() : this.renderSection()}<br/>
           <button type="button" className="button" id="confirmButton" onClick={this.setProblemSet}>確認</button>
         </div>
         {this.state.result === 'finished' ? this.renderResult() : this.renderQuiz()}
@@ -251,6 +256,7 @@ class App extends Component {
         <div className="button-container">
           <button type="button" className="button" id="previousButton" onClick={this.setPreviousQuestion}>上一題</button>
           <button type="button" className="button" id="nextButton" onClick={this.setNextQuestion}>下一題</button>
+          <button type="button" className="button" id="resetButton" onClick={this.resetTest}>重新選擇題庫</button>
         </div><br />
       </div>
     );

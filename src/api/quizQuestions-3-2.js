@@ -147,30 +147,18 @@ var quizQuestions = [
         "answers": [
             {
                 "type": "F",
-                "content": "肩關節、髖關節支撐法"
+                "content": "肩關節、髖關節支撐法（長背板固定法）"
             },
             {
                 "type": "F",
-                "content": ""
+                "content": "手夾板固定法（雙臂固定旋轉法）"
             },
             {
                 "type": "F",
-                "content": "手夾板固定法"
+                "content": "頭、顎固定法（頭胸固定旋轉法）"
             },
             {
                 "type": "T",
-                "content": ""
-            },
-            {
-                "type": "F",
-                "content": "頭、顎固定法"
-            },
-            {
-                "type": "F",
-                "content": ""
-            },
-            {
-                "type": "F",
                 "content": "以上皆是。"
             }
         ]

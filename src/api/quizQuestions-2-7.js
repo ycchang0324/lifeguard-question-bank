@@ -1111,11 +1111,7 @@ var quizQuestions = [
             },
             {
                 "type": "T",
-                "content": "直跳式"
-            },
-            {
-                "type": "F",
-                "content": ""
+                "content": "直跳式（打樁式）"
             },
             {
                 "type": "F",

@@ -14,7 +14,7 @@ function Result(props) {
       transitionAppearTimeout={500}
     >
       <div>
-        完成本節測驗，請重新刷新頁面做其他測驗。
+        完成本節測驗，請點選重新選擇題庫進行其他章節測驗。
       </div>
     </CSSTransitionGroup>
   );
