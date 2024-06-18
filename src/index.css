@@ -52,6 +52,11 @@ body {
 
 .message {
   text-align: center;
+  font-weight: bold;
+  /* 你也可以使用 Google Fonts，以下是一個範例 */
+  /*
+  font-family: 'Roboto', sans-serif;
+  */
 }
 
 .container {
@@ -236,6 +241,14 @@ body {
   margin-top: 10px;
 }
 
+.confirm-section{
+  text-align: center;
+  font-weight: bold;
+  /* 你也可以使用 Google Fonts，以下是一個範例 */
+  /*
+  font-family: 'Roboto', sans-serif;
+  */
+}
 .button-container {
   display: flex;
   justify-content: center;
